@@ -1,0 +1,18 @@
+<header>
+  <h1>Stimulus ICC</h1>
+  <p>Stimulus Inter Controller Communication</p>
+</header>
+
+<main>
+  <section data-controller="sender">
+    <h4>Sender controller</h4>
+    <input type="text" placeholder="Enter a message" />
+    <button data-action="sender#sendMessage">Send</button>
+  </section>
+
+  <section data-controller="receiver" data-action="icc:message@document->receiver#getMessage">
+    <h4>Receiver controller</h4>
+    <div data-receiver-target="messages">
+    </div>
+  </section>
+</main>
