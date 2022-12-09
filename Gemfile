@@ -28,3 +28,7 @@ group :development do
   # gem "spring"
 end
 
+
+gem "stimulus-rails", "~> 1.2"
+
+gem "importmap-rails", "~> 1.1"

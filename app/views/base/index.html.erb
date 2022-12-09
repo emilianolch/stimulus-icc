@@ -6,11 +6,11 @@
 <main>
   <section data-controller="sender">
     <h4>Sender controller</h4>
-    <input type="text" placeholder="Enter a message" />
+    <input type="text" placeholder="Enter a message" data-sender-target="input" />
     <button data-action="sender#sendMessage">Send</button>
   </section>
 
-  <section data-controller="receiver" data-action="icc:message@document->receiver#getMessage">
+  <section data-controller="receiver" data-action="stimulus-icc:message@document->receiver#getMessage">
     <h4>Receiver controller</h4>
     <div data-receiver-target="messages">
     </div>
