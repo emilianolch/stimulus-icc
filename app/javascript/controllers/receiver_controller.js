@@ -4,10 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["messages"]
 
-  getMessage(event) {
+  push(message) {
     const p = document.createElement("p")
 
-    p.append(event.detail.message)
+    p.append(message)
     this.messagesTarget.append(p)
   }
 }

@@ -4,14 +4,20 @@
 </header>
 
 <main>
-  <section data-controller="sender">
+  <section data-controller="sender" data-sender-receiver-outlet=".receiver">
     <h4>Sender controller</h4>
     <input type="text" placeholder="Enter a message" data-sender-target="input" />
     <button data-action="sender#sendMessage">Send</button>
   </section>
 
-  <section data-controller="receiver" data-action="stimulus-icc:message@document->receiver#getMessage">
-    <h4>Receiver controller</h4>
+  <section class="receiver" data-controller="receiver" data-action="stimulus-icc:message@document->receiver#getMessage">
+    <h4>Receiver controller 1</h4>
+    <div data-receiver-target="messages">
+    </div>
+  </section>
+
+  <section class="receiver" data-controller="receiver" data-action="stimulus-icc:message@document->receiver#getMessage">
+    <h4>Receiver controller 2</h4>
     <div data-receiver-target="messages">
     </div>
   </section>

@@ -3,15 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="sender"
 export default class extends Controller {
   static targets = ["input"]
+  static outlets = ["receiver"]
 
   sendMessage() {
-    const event = new CustomEvent("stimulus-icc:message", {
-      detail: {
-        message: this.inputTarget.value,
-      },
-    })
-
-    document.dispatchEvent(event)
+    for (const outlet of this.receiverOutlets) {
+      outlet.push(this.inputTarget.value)
+    }
     this.inputTarget.value = ""
   }
 }
